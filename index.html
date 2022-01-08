@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css" />
+	<title>SignUP</title>
+	<!--
+	<script type="text/javascript">
+		const user = {
+			id = exampleInputEmail1
+			pw = exampleInputPassword1
+		}
+		window.localStorage.setItem("user1", JSON.stringify(user))
+	</script>
+<script type="text/javascript">
+	function Login() {
+		var a = new Array();
+		up1 = new Object();
+	}
+	up1= {
+		name:exampleInputEmail1
+		pw:exampleInputPassword1
+	}
+	a.push(up1)
+	window.localStorage.setItem("user", a);
+</script>
+-->
+<script type="text/javascript">
+	function signup() {
+		var x = document.getElementById("exampleInputEmail1").value
+		var y = document.getElementById("exampleInputPassword1").value
+		window.localStorage.setItem("id", x)
+		window.localStorage.setItem("pw", y)
+	}
+	function verify() {
+		window.alert("This is my ID : " + window.localStorage.getItem("id") + "\n This is my PW : " + window.localStorage.getItem("pw"))
+
+		
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+	<!--
+		window.alert(window.localStorage.getItem("pw"))
+		window.alert(window.localStorage.getItem("id") + '' + window.alert(window.localStorage.getItem("pw")))
+		window.alert("This is the PW : " + window.localStorage.getItem("pw"))	
+		window.alert("This is the ID : " + window.localStorage.getItem("id").concat("\n", "This is the PW : " + window.localStorage.getItem("pw")))
+	-->
+	<form>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+		</div>
+		<div class="mb-3">
+			<label for="examplePassword1" class="form-label">Password</label>
+			<input type="Password" class="form-control" id="exampleInputPassword1">
+		</div>
+		<div class="mb-3 form-check">
+			<input type="checkbox" class="form-check-input" id="exampleCheck1">
+			<label class="form-check-label" for="exampleCheck1">Check me out</label>
+		</div>
+		<button type="submit" onclick="signup()">Add Local Storage</button>
+		<button onclick="verify()">Vérification</button>
+	</form>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
