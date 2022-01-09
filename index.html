@@ -31,18 +31,21 @@
 	function signup() {
 		var x = document.getElementById("exampleInputEmail1").value
 		var y = document.getElementById("exampleInputPassword1").value
+		var u = document.getElementById("examplePseudo1").value
 		window.localStorage.setItem("id", x)
 		window.localStorage.setItem("pw", y)
+		window.localStorage.setItem("ps", u)
 	}
 	function verify() {
-		window.alert("This is my ID : " + window.localStorage.getItem("id") + "\n This is my PW : " + window.localStorage.getItem("pw"))
+		window.alert("This is my Pseudo : " + window.localStorage.getItem("ps") + "\n This is my ID : " + window.localStorage.getItem("id") + "\n This is my PW : " + window.localStorage.getItem("pw"))
 	}
 	function login() {
 		var r = document.getElementById("exampleInputEmail1").value
 		var t = document.getElementById("exampleInputPassword1").value
+		var z = document.getElementById("examplePseudo1").value
 		if (window.localStorage.getItem("id") == r && window.localStorage.getItem("pw") == t){
 			window.alert("Connected")
-			document.getElementById("greetings").textContent = "Bonjour" + r
+			document.getElementById("greetings").textContent = "Bonjour " + z
 		} else {
 			window.alert("Wrong ID, try again")
 		}
@@ -63,6 +66,9 @@ let d = document.getElementById("exampleInputEmail1").textContent
 <h1 id="greetings"></h1>
 <form>
 	<div class="mb-3">
+		<label for="examplePseudo1" class="form-label">Pseudo</label>
+		<input type="pseudo" class="form-control" id="examplePseudo1">
+	<div class="mb-3">
 		<label for="exampleInputEmail1" class="form-label">Email address</label>
 		<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 		<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
@@ -75,10 +81,10 @@ let d = document.getElementById("exampleInputEmail1").textContent
 		<input type="checkbox" class="form-check-input" id="exampleCheck1">
 		<label class="form-check-label" for="exampleCheck1">Check me out</label>
 	</div>
-	<button onclick="signup()">Add Local Storage</button>
-	<button onclick="verify()">Vérification</button>
-	<button onclick="login()">Connexion</button>
 </form>
+<button onclick="signup()">Add Local Storage</button>
+<button onclick="verify()">Vérification</button>
+<button onclick="login()">Connexion</button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
